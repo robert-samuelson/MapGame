@@ -4,7 +4,6 @@ from PIL import Image, ImageTk
 from constants import *
 import time
 
-#
 
 class MapGame:
     def __init__(self):
@@ -31,14 +30,14 @@ class MapGame:
         self.score = 0
         self.rounds_left = MAX_ROUNDS
         self.game_over = False
-        self.image = ImageTk.PhotoImage(Image.open(INITIAL_MAP).resize((800, 400)))
+        self.image = ImageTk.PhotoImage(Image.open(INITIAL_MAP).resize((MAP_WIDTH, MAP_HEIGHT)))
         self.map_picture.configure(image=self.image)
-        response = "Can you find the state where you born in on the map?"
+        response = "Can you find the " + AREA_DESCRIPTOR + " where you were born in on the map?"
         self.question.configure(text=response)
 
     def yes_func(self, event):
         if self.game_over:
-            self.start_game()
+            self.start_game(None)
         if self.rounds_left == MAX_ROUNDS:
             self.update_round()
         elif self.rounds_left >= 0:
@@ -57,7 +56,7 @@ class MapGame:
 
     def game_end(self):
         if self.score in score_to_state:
-            response = "I think your state is " + score_to_state[self.score]
+            response = "I think your " + AREA_DESCRIPTOR + " is " + score_to_state[self.score]
         else:
             response = "You gave me bad input"
         response += "....   Would you like to play again?"
@@ -73,9 +72,9 @@ class MapGame:
             self.update_image()
 
     def update_image(self):
-        self.new_image = ImageTk.PhotoImage(Image.open(self.round_to_image_file()).resize((800, 400)))
+        self.new_image = ImageTk.PhotoImage(Image.open(self.round_to_image_file()).resize((MAP_WIDTH, MAP_HEIGHT)))
         self.map_picture.configure(image=self.new_image)
-        self.question.configure(text="Is your state in yellow?")
+        self.question.configure(text="Is your " + AREA_DESCRIPTOR + " in " + HIGHLIGHT_COLOR)
 
     def round_to_image_file(self):
         filepath = MAP_DIRECTORY + "/" + MAP_FILENAME_PREFIX + str(2**(self.rounds_left)) + ".jpg"

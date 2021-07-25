@@ -2,6 +2,10 @@ MAP_FILENAME_PREFIX = "mx"
 MAX_ROUNDS = 6
 MAP_DIRECTORY = "MexicoMaps"
 INITIAL_MAP = MAP_DIRECTORY + "/" + "mmap.jpg"
+AREA_DESCRIPTOR = "state"
+HIGHLIGHT_COLOR = "yellow"
+MAP_HEIGHT = 400
+MAP_WIDTH = 800
 
 score_to_state = {11: "Aguascalientes - AGS",
                   12: "Baja California Norte - BCN",

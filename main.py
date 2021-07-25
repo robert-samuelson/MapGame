@@ -4,6 +4,8 @@ from PIL import Image, ImageTk
 from constants import *
 import time
 
+#
+
 class MapGame:
     def __init__(self):
         self.window = tk.Tk()

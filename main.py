@@ -1,8 +1,14 @@
 #!python3.7
+import time
 import tkinter as tk
 from PIL import Image, ImageTk
-from constants import *
-import time
+geography = input("What country do you want to play?")
+if geography == "US":
+    from us_constants import *
+elif geography == "Mexico":
+    from mexico_constants import *
+else:
+    exit("Unknown country!")
 
 
 class MapGame:
@@ -26,7 +32,7 @@ class MapGame:
         self.window.mainloop()
 
     def start_game(self, event):
-        print("Starting Game...")
+        print("Starting Game... " + geography)
         self.score = 0
         self.rounds_left = MAX_ROUNDS
         self.game_over = False
@@ -80,6 +86,8 @@ class MapGame:
         filepath = MAP_DIRECTORY + "/" + MAP_FILENAME_PREFIX + str(2**(self.rounds_left)) + ".jpg"
         return filepath
 
-MapGame()
+
+if __name__ == "__main__":
+    MapGame()
 
 

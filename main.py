@@ -7,6 +7,8 @@ if geography == "US":
     from us_constants import *
 elif geography == "Mexico":
     from mexico_constants import *
+elif geography == "Brazil":
+    from br_constants import *
 else:
     exit("Unknown country!")
 

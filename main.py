@@ -2,7 +2,16 @@
 import time
 import tkinter as tk
 from PIL import Image, ImageTk
-geography = input("What country do you want to play?")
+
+
+class MapSelector:
+    def main(self):
+        geography = input("What country do you want to play?")
+        return geography
+
+
+geography = MapSelector().main()
+
 if geography == "US":
     from us_constants import *
 elif geography == "Mexico":

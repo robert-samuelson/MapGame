@@ -18,6 +18,12 @@ elif geography == "Mexico":
     from mexico_constants import *
 elif geography == "Brazil":
     from br_constants import *
+elif geography == "Greece":
+    from gr_constants import *
+elif geography == "Asia":
+    from asia_constants import *
+elif geography == "Africa":
+    from africa_constants import *
 else:
     exit("Unknown country!")
 

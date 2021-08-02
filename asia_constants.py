@@ -3,7 +3,7 @@ MAX_ROUNDS = 6
 MAP_DIRECTORY = "AsiaMaps"
 INITIAL_MAP = MAP_DIRECTORY + "/" + "mmap.jpg"
 AREA_DESCRIPTOR = "country, city, island or sea"
-HIGHLIGHT_COLOR = "yellow"
+HIGHLIGHT_COLOR = "print"
 MAP_HEIGHT = 400
 MAP_WIDTH = 800
 

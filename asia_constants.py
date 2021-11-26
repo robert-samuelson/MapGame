@@ -4,8 +4,10 @@ MAP_DIRECTORY = "AsiaMaps"
 INITIAL_MAP = MAP_DIRECTORY + "/" + "mmap.jpg"
 AREA_DESCRIPTOR = "country, city, island or sea"
 HIGHLIGHT_COLOR = "print"
-MAP_HEIGHT = 400
-MAP_WIDTH = 800
+MAP_HEIGHT = 600
+MAP_WIDTH = 700
+BUTTON_HEIGHT = 2
+BUTTON_WIDTH = 5
 
 score_to_state = {1: "Beijing",
                   2: "Busan",

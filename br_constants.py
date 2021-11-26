@@ -4,8 +4,10 @@ MAP_DIRECTORY = "BRMaps"
 INITIAL_MAP = MAP_DIRECTORY + "/" + "mmap.jpg"
 AREA_DESCRIPTOR = "state"
 HIGHLIGHT_COLOR = "yellow"
-MAP_HEIGHT = 400
-MAP_WIDTH = 800
+MAP_HEIGHT = 600
+MAP_WIDTH = 700
+BUTTON_HEIGHT = 2
+BUTTON_WIDTH = 5
 
 score_to_state = {1: "Acre",
                   2: "Alagoas",

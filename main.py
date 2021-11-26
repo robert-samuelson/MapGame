@@ -6,7 +6,8 @@ from PIL import Image, ImageTk
 
 class MapSelector:
     def main(self):
-        geography = input("What country do you want to play?")
+        geography = input("What country do you want to play? US, Mexico, Brazil, Greece, China, Asia or Africa")AsiaMaps
+
         return geography
 
 
@@ -24,6 +25,9 @@ elif geography == "Asia":
     from asia_constants import *
 elif geography == "Africa":
     from africa_constants import *
+elif geography == "China":
+    from china_constants import *
+
 else:
     exit("Unknown country!")
 
@@ -31,15 +35,15 @@ else:
 class MapGame:
     def __init__(self):
         self.window = tk.Tk()
-        self.image = ImageTk.PhotoImage(Image.open(INITIAL_MAP).resize((800, 400)))
+        self.image = ImageTk.PhotoImage(Image.open(INITIAL_MAP).resize((MAP_WIDTH, MAP_HEIGHT)))
         self.map_picture = tk.Label(image=self.image)
         self.question = tk.Label(text="Blah")
         self.start_game(None)
-        self.yes_button = tk.Button(text="Yes", width=25, height=5, bg="blue", fg="yellow")
+        self.yes_button = tk.Button(text="Yes", width=BUTTON_WIDTH, height=BUTTON_HEIGHT, bg="blue", fg="yellow")
         self.yes_button.bind("<Button-1>", self.yes_func)
-        self.no_button = tk.Button(text="No",  width=25, height=5, bg="red",  fg="yellow")
+        self.no_button = tk.Button(text="No", width=BUTTON_WIDTH, height=BUTTON_HEIGHT, bg="red",  fg="yellow")
         self.no_button.bind("<Button-1>", self.no_func)
-        self.start_over_button = tk.Button(text="Start Over", width=25, height=5, bg="green", fg="yellow")
+        self.start_over_button = tk.Button(text="Start Over", width=BUTTON_WIDTH, height=BUTTON_HEIGHT, bg="green", fg="yellow")
         self.start_over_button.bind("<Button-1>", self.start_game)
         self.map_picture.pack()
         self.question.pack()
